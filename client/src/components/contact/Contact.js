@@ -19,32 +19,54 @@ const Contact = () => {
   };
   // ========== Email Validation end here ================
 
-  const handleSend = (e) => {
+  const handleSend = async (e) => {
     e.preventDefault();
     if (username === "") {
-      setErrMsg("Username is required!");
+        setErrMsg("Username is required!");
     } else if (phoneNumber === "") {
-      setErrMsg("Phone number is required!");
+        setErrMsg("Phone number is required!");
     } else if (email === "") {
-      setErrMsg("Please give your Email!");
+        setErrMsg("Please give your Email!");
     } else if (!emailValidation(email)) {
-      setErrMsg("Give a valid Email!");
+        setErrMsg("Give a valid Email!");
     } else if (subject === "") {
-      setErrMsg("Plese give your Subject!");
+        setErrMsg("Please give your Subject!");
     } else if (message === "") {
-      setErrMsg("Message is required!");
+        setErrMsg("Message is required!");
     } else {
-      setSuccessMsg(
-        `Thank you dear ${username}, Your Messages has been sent Successfully!`
-      );
-      setErrMsg("");
-      setUsername("");
-      setPhoneNumber("");
-      setEmail("");
-      setSubject("");
-      setMessage("");
+        try {
+            const response = await fetch('http://127.0.0.1:5000/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username,
+                    phoneNumber,
+                    email,
+                    subject,
+                    message,
+                }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setSuccessMsg(data.message);
+                setErrMsg("");
+                setUsername("");
+                setPhoneNumber("");
+                setEmail("");
+                setSubject("");
+                setMessage("");
+            } else {
+                setErrMsg("Error submitting the form.");
+            }
+        } catch (error) {
+            setErrMsg("Error submitting the form.");
+        }
     }
-  };
+};
+
   return (
     <section
       id="contact"

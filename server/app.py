@@ -1,9 +1,11 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify   
+from flask_cors import CORS
 import smtplib
 from email.mime.text import MIMEText
 from decouple import config
 
 app = Flask(__name__)
+CORS(app)
 
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
@@ -37,12 +39,12 @@ def send_email(username, email, subject, message):
         msg = MIMEText(f"From: {username}\nEmail: {email}\nSubject: {subject}\nMessage: {message}")
         msg['Subject'] = f"New Contact Form Submission from {username}"
         msg['From'] = SMTP_USERNAME
-        msg['To'] = 'trenatto82@gmail.com'  # Replace with your email address
+        msg['To'] = 'tamunotonyebriggz@gmail.com'
 
         server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
         server.starttls()
         server.login(SMTP_USERNAME, SMTP_PASSWORD)
-        server.sendmail(SMTP_USERNAME, 'trenatto82@gmail.com', msg.as_string())
+        server.sendmail(SMTP_USERNAME, 'tamunotonyebriggz@gmail.com', msg.as_string())
         server.quit()
     except Exception as e:
         print(f"Email sending failed: {str(e)}")
