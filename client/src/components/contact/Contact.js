@@ -10,6 +10,8 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+  const baseUrl = '/.netlify-functions/sendEmail'; // Replace this with the correct base URL
+  const path = 'https://tamunotonye-briggs.netlify.app/.netlify/functions/emails';
 
   // ========== Email Validation start here ==============
   const emailValidation = () => {
@@ -35,7 +37,7 @@ const Contact = () => {
         setErrMsg("Message is required!");
     } else {
         try {
-            const response = await fetch('/.netlify-functions/sendEmailhttps://tamunotonye-briggs.netlify.app/.netlify/functions/emails', {
+            const response = await fetch(baseUrl + path, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
