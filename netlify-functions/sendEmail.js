@@ -8,7 +8,7 @@ exports.handler = async function (event, context) {
   const { username, phoneNumber, email, subject, message } = data;
 
   // Validate and process the data (you can add more validation logic here)
-  if (!username || !email || !message) {
+  if (!username || !phoneNumber || !email || !subject || !message) {
     return {
       statusCode: 400,
       body: JSON.stringify({ error: 'Missing required fields' }),
@@ -17,7 +17,7 @@ exports.handler = async function (event, context) {
 
   // Send email
   try {
-    await sendEmail(username, email, subject, message);
+    await sendEmail(username, phoneNumber, email, subject, message);
     return {
       statusCode: 200,
       body: JSON.stringify({ message: 'Form submitted successfully' }),
