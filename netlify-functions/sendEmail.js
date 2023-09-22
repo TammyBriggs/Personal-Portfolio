@@ -20,6 +20,10 @@ exports.handler = async function (event, context) {
     await sendEmail(username, phoneNumber, email, subject, message);
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*', 
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({ message: 'Form submitted successfully' }),
     };
   } catch (error) {
