@@ -15,14 +15,30 @@ exports.handler = async function (event, context) {
     };
   }
 
-  // Send email
-  try {
-    await sendEmail(username, phoneNumber, email, subject, message);
+  // Handle pre-flight OPTIONS request
+  if (event.httpMethod === 'OPTIONS') {
     return {
       statusCode: 200,
       headers: {
-        'Access-Control-Allow-Origin': '*', 
-        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'https://main--tamunotonye-briggs.netlify.app',
+        'Access-Control-Allow-Methods': 'POST',
+        'Access-Control-Allow-Headers': 'Content-Type',
+      },
+      body: JSON.stringify({ message: 'Preflight request successful' }),
+    };
+  }
+
+  // Send email
+  try {
+    await sendEmail(username, phoneNumber, email, subject, message);
+
+    // Return the response with CORS headers
+    return {
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': 'https://main--tamunotonye-briggs.netlify.app',
+        'Access-Control-Allow-Methods': 'POST',
+        'Access-Control-Allow-Headers': 'Content-Type',
       },
       body: JSON.stringify({ message: 'Form submitted successfully' }),
     };
@@ -35,7 +51,7 @@ exports.handler = async function (event, context) {
   }
 };
 
-async function sendEmail(username, email, subject, message) {
+async function sendEmail(username, phoneNumber, email, subject, message) {
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
