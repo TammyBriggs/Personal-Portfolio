@@ -35,7 +35,7 @@ const Contact = () => {
         setErrMsg("Message is required!");
     } else {
         try {
-            const response = await fetch('http://127.0.0.1:5000/submit-form', {
+            const response = await fetch('/.netlify-functions/sendEmailhttps://tamunotonye-briggs.netlify.app/.netlify/functions/emails', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
