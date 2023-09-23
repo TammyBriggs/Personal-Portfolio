@@ -6,6 +6,7 @@ import FooterBottom from "./components/footer/FooterBottom";
 import Navbar from "./components/navbar/Navbar";
 import Projects from "./components/projects/Projects";
 import Resume from "./components/resume/Resume";
+import ContactLeft from "./components/contact/ContactLeft";
 // import Testimonial from "./components/tesimonial/Testimonial";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Projects />
         <Resume />
         {/* <Testimonial /> */}
-        <Contact />
+        <ContactLeft />
         <FooterBottom />
       </div>
     </div>

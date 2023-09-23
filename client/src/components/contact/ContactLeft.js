@@ -1,10 +1,19 @@
 import React from 'react'
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { contactImg } from "../../assets/index";
+import Title from '../layouts/Title';
 
 const ContactLeft = () => {
   return (
-    <div className="w-full lgl:w-[35%] h-full bg-gradient-to-r from-[#1e2024] to-[#23272b] p-4 lgl:p-8 rounded-lg shadow-shadowOne flex flex-col gap-8 justify-center">
+    <section
+      id="contact"
+      className="w-full py-20 border-b-[1px] border-b-black"
+    >
+      <div className="flex justify-center items-center text-center">
+        <Title title="CONTACT" des="Contact Me" />
+      </div>
+      <div className="w-full h-auto flex flex-col lgl:flex-row justify-between">
+    <div className="w-full lgl:w-[60%] h-full bg-gradient-to-r from-[#1e2024] to-[#23272b] p-4 lgl:p-8 rounded-lg shadow-shadowOne flex flex-col gap-8 justify-center">
       <img
         className="w-full h-64 object-cover rounded-lg mb-2"
         src={contactImg}
@@ -38,6 +47,8 @@ const ContactLeft = () => {
           </div>
       </div>
     </div>
+    </div>
+    </section>
   );
 }
 
