@@ -11,7 +11,7 @@ const Contact = () => {
   const [errMsg, setErrMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
   const baseUrl = 'https://tamunotonye-briggs.netlify.app';
-  const path = '/.netlify/functions/emails';
+  const path = '/.netlify/functions/sendEmail';
 
   // ========== Email Validation start here ==============
   const emailValidation = () => {
