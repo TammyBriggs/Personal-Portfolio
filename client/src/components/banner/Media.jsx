@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaLinkedinIn, FaReact, FaJs, FaInstagram } from "react-icons/fa";
-import { SiCss3, SiPython } from "react-icons/si";
+import { SiCss3, SiPython, SiGmail } from "react-icons/si";
 const Media = () => {
   return (
     <div className="flex flex-col xl:flex-row gap-6 lgl:gap-0 justify-between">
@@ -14,6 +14,9 @@ const Media = () => {
           </a>
           <a href="https://www.instagram.com/tee_briggz/" target="_blank" rel="noopener noreferrer" className="bannerIcon">
             <FaInstagram />
+          </a>
+          <a href="mailto:trenatto82@gmail.com" className="bannerIcon">
+            <SiGmail />
           </a>
           </div>
         </div>

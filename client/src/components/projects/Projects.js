@@ -24,7 +24,6 @@ const Projects = () => {
       des: "Food ChaChap is a platform where Dine in and Take away customers can Pre-Order their favorite meals from restaurants of their choice, so that their food is ready on arrival, saving time with payments made in advance.",
       src: projectThree,
       githubLink: "https://github.com/Moringa-Final-Project/FoodChapChap-Pre-Order-Service",
-      internetLink: "https://yourwebsite3.com",
     },
   ];
 
