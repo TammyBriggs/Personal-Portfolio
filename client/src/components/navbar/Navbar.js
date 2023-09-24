@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { Link } from "react-scroll";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { SiGmail } from 'react-icons/si';
 import { navLinksdata } from '../../constants';
 
 const Navbar = () => {
@@ -60,18 +61,18 @@ const Navbar = () => {
               </ul>
               <div className="flex flex-col gap-4">
                 <h2 className="text-base uppercase font-titleFont mb-4">
-                  Find me in
+                  Find me on
                 </h2>
                 <div className="flex gap-4">
-                  <span className="bannerIcon">
-                    <FaFacebookF />
-                  </span>
-                  <span className="bannerIcon">
-                    <FaTwitter />
-                  </span>
-                  <span className="bannerIcon">
-                    <FaLinkedinIn />
-                  </span>
+                <a href="https://www.linkedin.com/in/tamunotonye-briggs-9193a8203/" target="_blank" rel="noopener noreferrer" className="bannerIcon">
+                  <FaLinkedinIn />
+                </a>
+                <a href="https://www.instagram.com/tee_briggz/" target="_blank" rel="noopener noreferrer" className="bannerIcon">
+                  <FaInstagram />
+                </a>
+                <a href="mailto:trenatto82@gmail.com" className="bannerIcon">
+                  <SiGmail />
+                </a>
                 </div>
               </div>
               <span
