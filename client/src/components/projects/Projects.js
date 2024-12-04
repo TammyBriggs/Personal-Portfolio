@@ -13,11 +13,11 @@ const Projects = () => {
       internetLink: "https://tammybriggs.github.io/Phase-1-Project/",
     },
     {
-      title: "Adventour Tourism Website",
-      des: "Advetour is an application that provides travel-related information to customers acting like an easy access tour guide that tells you where to go, what to see and where to eat. ",
+      title: "Royal Stitches E-commerce Website",
+      des: "The website showcases the company's latest collections, highlighting their elegant designs and impeccable craftsmanship. It will also integrate e-commerce functionalities to enable customers to purchase items directly from the website.",
       src: projectTwo,
-      githubLink: "https://github.com/BabaMboga/project-adventour",
-      internetLink: "https://project-adventour.vercel.app/",
+      githubLink: "https://github.com/TammyBriggs/RoyalStitches-SEFP",
+      internetLink: "https://royal-stitches-client.vercel.app/",
     },
     {
       title: "Food ChapChap Web App",
