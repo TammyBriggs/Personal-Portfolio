@@ -14,7 +14,7 @@ const Projects = () => {
     },
     {
       title: "Royal Stitches E-commerce Website",
-      des: "The website showcases the company's latest collections, highlighting their elegant designs and impeccable craftsmanship. It will also integrate e-commerce functionalities to enable customers to purchase items directly from the website.",
+      des: "The website showcases the company's latest collections, highlighting their elegant designs and impeccable craftsmanship. It will also integrate e-commerce functionalities to enable customers to purchase items directly from the website. You will need to run this server in a different tab as this site fetches from a backend - https://royal-stitches-server.vercel.app/",
       src: projectTwo,
       githubLink: "https://github.com/TammyBriggs/RoyalStitches-SEFP",
       internetLink: "https://royal-stitches-client.vercel.app/",
